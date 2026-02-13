@@ -37,7 +37,7 @@ public:
     }
 };
 ```
-### Valid Anagram
+## Valid Anagram
 #### Given two strings s and t, return true if the two strings are anagrams of each other, otherwise return false.
 
 #### An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.
@@ -55,6 +55,29 @@ public:
             if(m1!=m2) return false;
         }
         return true;
+    }
+};
+```
+## Two Sum
+#### Given an array of integers nums and an integer target, return the indices i and j such that nums[i] + nums[j] == target and i != j.
+
+#### You may assume that every input has exactly one pair of indices i and j that satisfy the condition.
+
+#### Return the answer with the smaller index first.
+```cpp
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int> m;
+        for(int i=0;i<nums.size();i++){
+            if(m.find(target-nums[i])!=m.end()){
+                return {m[target-nums[i]],i};
+            }
+            else{
+                m[nums[i]]=i;
+            }
+        }
+        return {};
     }
 };
 ```
