@@ -81,3 +81,27 @@ public:
     }
 };
 ```
+## Longest Common Prefix
+#### You are given an array of strings strs. Return the longest common prefix of all the strings.
+
+#### If there is no longest common prefix, return an empty string "".
+
+```cpp
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        char val;
+        string ans="";
+        for(int j=0;j<strs[0].length();j++){
+            val =strs[0][j];
+            for(int i=1;i<strs.size();i++){
+                if(val!=strs[i][j]) return ans;
+            }
+            ans+=val;
+        }
+        
+        return ans;
+    }
+};
+```
+
