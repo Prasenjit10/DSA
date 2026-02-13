@@ -105,3 +105,21 @@ public:
 };
 ```
 
+## Remove Element
+#### You are given an integer array nums and an integer val. Your task is to remove all occurrences of val from nums in-place.
+
+#### After removing all occurrences of val, return the number of remaining elements, say k, such that the first k elements of nums do not contain val.
+```cpp
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        int k=0;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]!=val){
+                nums[k++]=nums[i];
+            }
+        }
+        return k;
+    }
+};
+```
